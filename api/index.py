@@ -1,12 +1,10 @@
-from http.server import BaseHTTPRequestHandler
-from cowpy import cow
+from fastapi import FastAPI
 
-class handler(BaseHTTPRequestHandler):
+app = FastAPI()
 
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type','text/plain')
-        self.end_headers()
-        message = cow.Cowacter().milk('Hello from Python from a Serverless Function!')
-        self.wfile.write(message.encode())
-        return
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+if __name__ == '__main__':
+    import uvicorn 
+    uvicorn.run("luck:app",host="0.0.0.0",port='23459')
