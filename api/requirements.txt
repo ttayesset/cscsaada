@@ -1,7 +1,1 @@
-web3
-requests
-smtplib
-typing
-eth-account
-tronpy
 Flask
