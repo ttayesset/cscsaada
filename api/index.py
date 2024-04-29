@@ -1,10 +1,8 @@
-from fastapi import FastAPI
+from flask import Flask, request
+import requests
 
-app = FastAPI()
+app = Flask(__name__)
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-if __name__ == '__main__':
-    import uvicorn 
-    uvicorn.run("luck:app",host="0.0.0.0",port='23459')
+@app.route('/')
+def hello_world():
+    return 'Hello from Flask Github!'
