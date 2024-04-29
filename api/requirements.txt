@@ -1,2 +1,2 @@
 cowpy
-"uvicorn[standard]"
+uvicorn[standard]
